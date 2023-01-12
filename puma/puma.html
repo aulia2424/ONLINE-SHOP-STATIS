@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <title>Aulia - aku_kepo</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- owl carousel css -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="css/font-awesome.css" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- main css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .play {
+        position: relative;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        background-color: #4267fa;
+        width: 70px;
+        height: 30px;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-weight: 500;
+        text-decoration: none;
+        letter-spacing: 2px;
+        font-size: 15px;
+      }
+      
+      .play:hover {
+        color: #ccc;
+        text-decoration: none;
+      }
+      
+      .trailer {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10000;
+        background: rgba(0, 0, 0, 0.95);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        visibility: hidden;
+        opacity: 0;
+      }
+      
+      .trailer.active {
+        visibility: visible;
+        opacity: 1;
+      }
+      
+      .bayar {
+        font-weight: 500;
+        color: #fff;
+        width: 600px;
+        height: 600px;
+        background-color: #4267fa;
+        border-radius: 10px;
+      }
+      
+      .bayar h2 {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      
+      .trailer .bayar {
+        max-width: 900px;
+        outline: none;
+      }
+      
+      .trailer .close {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        cursor: pointer;
+        filter: invert(1);
+        max-width: 32px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand" href="puma.html">Secoutfits</a>
+
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a data-scroll-nav="0" href="#">
+                <div class="search">
+                  <div class="icon">
+                   <i class="fa fa-search" aria-hidden="true" style="width: 15px; height: 15px; margin-bottom: 10px; margin-right: 10px;"></i>
+                  </div>
+                  <div class="input" style="margin-left: 35px; margin-top: 4px;">
+                    <input type="text" placeholder="Search" id="mysearch">
+                  </div>
+                  <span class="clear" onclick="document.getElementById('mysearch').value = ''"></span>
+                </div>
+              </a>
+              <script>
+                const icon = document.querySelector('.icon');
+                const search= document.querySelector('.search');
+                icon.onclick = function(){
+                  search.classList.toggle('active')
+                }
+              </script>
+                  
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-scroll-nav="1" href="#">Shoes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-scroll-nav="2" href="#">Clothing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-scroll-nav="3" href="#">B & B</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-scroll-nav="4" href="#">Other Brand
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+
+<!-- Home Section Start -->
+<section>
+  <div class="home d-flex align-items-center" id="home" data-scroll-index="0" >
+        <div class="effect-wrap">
+          <i class="fas fa-plus effect effect-1"></i>
+          <i class="fas fa-plus effect effect-2"></i>
+          <i class="fas fa-circle-notch effect effect-3"></i>
+        </div>
+    <div class="container" data-scroll-index="1">
+      <div class="home-text">
+        <h1>Shoes</h1>
+        <div class="home-img">
+          <div class="row">
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/shoes/1.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">Suede Triplex Denim Sneakers</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 1.690.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/shoes/2.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">CA Pro Tumble Mens's Sneakers</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 1.780.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/shoes/3.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">GV Special+Sneakers</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 1.690.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/shoes/4.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">Puma X Helly Hansen Wils Rider Men's Sneakers</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 2.199.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/shoes/5.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">Wld Rider Rollin'Men's Sneakers</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 1.999.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/shoes/6.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">Wild Rider Techno Men's Sneakers</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 2.199.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/shoes/7.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">FUSE Women Training Shoes</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 1.750.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/shoes/8.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">Defy Mid Metal Women's Training Shoes</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 960.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/shoes/9.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">Pure XT Moto Rose Women's Training Shoes</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 1.680.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/shoes/10.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">Court Rider Summer Days Basketball Shoes</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 2.200.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/shoes/11.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">Legacy Shammgod Basketball Shoes</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 1.590.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/shoes/12.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">RS-DREAMER Basketball Shoes</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 1.499.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/shoes/13.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">Mayze Women's Sneakers</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 1.600.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/shoes/14.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">PUMA X DUA LIPA Mayze Flutur Women's Sneakers</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 2.400.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/shoes/15.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">Cali Sport Mix Women's Sneakers</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 1.750.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                        </div>
+                      </div>
+                      
+                    <h1 style="margin-top: 40px;" data-scroll-index="2">Clothing</h1>
+                    <div class="row">
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/clothing/1.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">Iconic T7 Men's Track Jacket</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 1.500.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/clothing/2.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">Iconic T7 Men's Track Pants</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 1.400.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/clothing/3.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">Classics Logo 8" Men's Shorts</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 970.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/clothing/4.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">Scuderia Ferrari Race SDS Men's Racing Jacket</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 2.690.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/clothing/5.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">Classics Block Men's Hoodie</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 1.570.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/clothing/6.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">The NeverWorn Crew Neck Men's Sweatshirt</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 1.580.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/clothing/7.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">Brand Love Oversized Crew Neck Women's Sweatshirt</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 1.460.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/clothing/8.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">Classics Ribbed Women's Hoodie</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 1.200.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/clothing/9.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">Bucket Women's Basketball Hoodie</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 1.400.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/clothing/10.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">High Court Quad Women's Basketball Jacket</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 5.900.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/clothing/11.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">PUMA x LIBERTY Women's Short Jacket</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 3.500.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/clothing/12.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">High Court Madison Fur Women's Basketball Coat</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 3.853.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/clothing/13.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">Iconic T7 Women's Leggings PL</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 950.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/clothing/14.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">Exhale Full-Length Women's Training Leggings</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 1.800.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/clothing/15.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">FormKnit Seamless High Waist 7/8 Women's Training Leggings</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 1.100.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                        </div>
+                      </div>
+
+                    <h1 style="margin-top: 40px;" data-scroll-index="3">Bag And Backpack</h1>
+                    <div class="row">
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/clothing/16.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">PUMA Phase Sports Bag</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 690.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/clothing/17.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">Plus Backpack</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 690.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/clothing/18.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">Phase Waist Bag</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 320.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/clothing/19.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">PUMA Edge Ruckpack</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 1.400.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/clothing/20.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">Phase Waist Bag</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 320.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/clothing/21.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">Sense Women's Multi-Pouch</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 1.660.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/clothing/22.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">Square Backpack</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 940.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/clothing/23.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">Patch Waist Bag</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 470.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/clothing/24.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">Patch Backpack</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 990.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/clothing/25.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">Patch Waist Bag</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 470.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/clothing/26.jpg" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">PUMA x BATMAN Chest Bag</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 1.240.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/clothing/27.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">New Varsity Shoulder Bag</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 984.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/clothing/28.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">Square Backpack</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 860.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/clothing/29.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">Edge Compact Portable Bag</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 789.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col mb-3">
+                        <div class="card" style="width: 21rem; border-radius: 10px;">
+                             <img src="img/clothing/30.webp" style="width: 280px; height: 280px; margin-top: 40px; margin-left: 27px;" class="card-img-top">
+                            <div class="card-body">
+                             <h5 class="card-title">Phase Backpack</h5>
+                             <p class="card-text" style="color: #383838;">Rp. 599.000</p>
+                             <a href="#" class="play" onclick="toggle();">Pesan</a>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- Home Section end -->
+
+    <!-- Features Section Start -->
+    <section class="features section-padding" id="features" data-scroll-index="4">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-title">
+              <h2>Other <span>Brands</span></h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="owl-carousel features-carousel">
+            <a href="../nike/nike.html">
+              <div class="feature-item">
+                <img src="img/nike12.webp"><br>
+                 <h3>Nike</h3>
+                <p>
+                  Air Trainer 1
+                </p>
+              </div>
+            </a>
+
+            <a href="../converse/converse.html">
+              <div class="feature-item" >
+                <img src="img/converse1.jpg"><br>
+                <h3>Converse</h3>
+                <p>
+                  Run Star Motion Canvas Platform
+                </p>
+              </div>
+            </a>
+
+            <a href="../addidas/addidas.html">
+              <div class="feature-item" >
+                <img src="img/addidas1.webp"><br>
+                <h3>Addidas</h3>
+                <p>
+                  Ultraboost 22 X Marimekko Shoes
+                </p>
+              </div>
+            </a>
+
+            <a href="../">
+              <div class="feature-item" >
+                <img src="img/reebok1.webp"><br>
+                <h3>Reebok</h3>
+                <p>
+                  Reebok Floatride Energy 3 Adventure Men's Running
+                </p>
+              </div>
+            </a>
+
+            <a href="../vans/vans.html">
+              <div class="feature-item" >
+                <img src="img/vans2.webp"><br>
+                <h3>Vans</h3>
+                <p>
+                  Authentic
+                </p>
+              </div>
+            </a>
+
+            <a href="../newB/newB.html">
+              <div class="feature-item">
+                <img src="img/newBalance1.webp"><br>
+                <h3>New Balance</h3>
+                <p>
+                  New Balance 237 Men's Sneakers - Burgundy
+                </p>
+              </div>
+            </a>
+
+            <a href="../jordan/jordan.html">
+              <div class="feature-item">
+                <img src="img/15.webp"><br>
+                <h3>Jordan</h3>
+                <p>
+                  Air Jordan Retro SE
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Features  section end -->
+
+    <!-- Social Media-->
+    <section class="app-download section-padding">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-title">
+              <h2>Social Media</h2>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6">
+              <div class="app-download-item">
+                <img src="img/github1.png" style="width: 50px; height: 50px; border-radius: 50px;">
+                <h3>Github</h3>
+                <p>saya biasa menyimpan atau mengupload code yg telah saya buat ke github.</p>
+                <a href="https://github.com/aulia2424" class="btn btn-2">Check Now</a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="app-download-item">
+                <div class="sci">
+                  <img src="img/instagram.png" width="30px" height="30px">
+                </div>
+                <h3>Instagram</h3>
+                <p>berisikan keseharian saya, jika anda penasaran silahkan follow my instagram.</p>
+                <a href="https://www.instagram.com/auliarthaaa/" class="btn btn-2">Check Now</a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="app-download-item">
+                <div class="sci">
+                 <img src="img/facebook.png" style="width: 15px; height: 25px;">
+                </div>
+                <h3>Facebook</h3>
+                <p>dunia permisuhan dan tempat untuk beristirahat, banyak meme yang saya share.</p>
+                <a href="https://www.facebook.com/auliarthaaaa/" class="btn btn-2">Check Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Social Media End-->
+
+
+    <!-- Testimonials Section Start -->
+    <section class="testimonials section-padding" id="testimonials">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-title">
+              <h2>Buyer <span>Reviews</span></h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="owl-carousel testimonials-carousel">
+            <div class="testimonial-item">
+              <div class="img-box">
+                <img src="img/testimonial/1.png" alt="testimonial" />
+                <i class="fas fa-quote-right"></i>
+              </div>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla quisquam suscipit voluptates alias accusantium nam repellendus ipsa quod.</p>
+              <h3>Aulia Martha</h3>
+              <span>UI Designer</span>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+            <div class="testimonial-item">
+              <div class="img-box">
+                <img src="img/testimonial/2.png" alt="testimonial" />
+                <i class="fas fa-quote-right"></i>
+              </div>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla quisquam suscipit voluptates alias accusantium nam repellendus ipsa quod.</p>
+              <h3>Aulia Martha</h3>
+              <span>Web Developer</span>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+            <div class="testimonial-item">
+              <div class="img-box">
+                <img src="img/testimonial/3.png" alt="testimonial" />
+                <i class="fas fa-quote-right"></i>
+              </div>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla quisquam suscipit voluptates alias accusantium nam repellendus ipsa quod.</p>
+              <h3>Aulia Martha</h3>
+              <span>Full Stack developer</span>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+            <div class="testimonial-item">
+              <div class="img-box">
+                <img src="img/testimonial/4.png" alt="testimonial" />
+                <i class="fas fa-quote-right"></i>
+              </div>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla quisquam suscipit voluptates alias accusantium nam repellendus ipsa quod.</p>
+              <h3>Aulia Martha</h3>
+              <span>Software Developer</span>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Testimonials Section End -->
+
+    <!-- Pricing Section Start -->
+    <section class="pricing section-padding" id="pricing">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-title">
+              <h2>Discount <span>Event</span></h2>
+              <br>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-6">
+            <div class="pricing-plan">
+              <div class="pricing-header">
+                <h3>2021</h3>
+              </div>
+              <div class="pricing-price">
+                <span class="price">50%</span>
+              </div>
+              <div class="pricing-body">
+                <ul>
+                  <li><i class="fas fa-check"></i> Maret</li>
+                  <li><i class="fas fa-check"></i> Mei</li>
+                  <li><i class="fas fa-check"></i> Juni</li>
+                  <li><i class="fas fa-check"></i> Agustus</li>
+                  <li><i class="fas fa-check"></i> Desember</li>
+                </ul>
+              </div>
+              <div class="pricing-footer">
+                <a href="#" class="btn btn-2">Get Started</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="pricing-plan">
+              <div class="pricing-header">
+                <h3>2022</h3>
+              </div>
+              <div class="pricing-price">
+                <span class="price">40%</span>
+              </div>
+              <div class="pricing-body">
+                <ul>
+                  <li><i class="fas fa-check"></i> Januari</li>
+                  <li><i class="fas fa-check"></i> Fuebruari</li>
+                  <li><i class="fas fa-check"></i> April</li>
+                  <li><i class="fas fa-check"></i> Juli</li>
+                  <li><i class="fas fa-check"></i> Oktober</li>
+                </ul>
+              </div>
+              <div class="pricing-footer">
+                <a href="#" class="btn btn-2">Get Started</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="pricing-plan">
+              <div class="pricing-header">
+                <h3>2023</h3>
+              </div>
+              <div class="pricing-price">
+                <span class="price">60%</span>
+              </div>
+              <div class="pricing-body">
+                <ul>
+                  <li><i class="fas fa-check"></i> Maret</li>
+                  <li><i class="fas fa-check"></i> April</li>
+                  <li><i class="fas fa-check"></i> Mei</li>
+                  <li><i class="fas fa-check"></i> September</li>
+                  <li><i class="fas fa-check"></i> November</li>
+                </ul>
+              </div>
+              <div class="pricing-footer">
+                <a href="#" class="btn btn-2">Get Started</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Pricing Section End -->
+
+    <!-- Team Section Start -->
+    <section class="team section-padding">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="section-title">
+              <h2>Best <span>Seller</span> Product</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="owl-carousel team-carousel">
+            <div class="team-item" >
+              <img src="img/clothing/10.webp" alt="team"/>
+              <h3>High Court Quad Women's Basketball Jacket</h3>
+              <span>Rp. 5.900.000</span>
+            </div>
+            <div class="team-item">
+              <img src="img/clothing/27.webp" alt="team"/>
+              <h3>New Varsity Shoulder Bag</h3>
+              <span>Rp. 984.000</span>
+            </div>
+            <div class="team-item" >
+              <img src="img/shoes/11.webp" alt="team"/>
+              <h3>Legacy Shammgod Basketball Shoes</h3>
+              <span>Rp. 1.590.000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Team Section End -->
+
+    <!-- Faq Section Start -->
+    <section class="faq section-padding">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-title">
+              <h2>Unique <span>information</span></h2>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div id="accordion">
+              <div class="accordion-item">
+                <div class="accordion-header" data-toggle="collapse" data-target="#collapse-01">
+                  <h3>Puma Is The Origin Of The Presence Of Adidas</h3>
+                </div>
+                <div class="collapse" id="collapse-01" data-parent="#accordion">
+                  <div class="accordion-body">
+                    <a href="" style="text-decoration: none;">
+                      <p>
+                        Germany is synonymous with the shoe business, several well-known brands are present from this country. One of them is this Puma. Puma was founded in 1924 with the company name since its inception was Gebruder Dassler Schuhfabrik which was founded by 2 brothers Adolf and Rudolf Dassler.              
+                      </p>
+                      <p>
+                        Unfortunately, after the second world war, these brothers and sisters quarreled and finally chose to separate. Adolf founded what Adidas is today. Rudolf founded Puma, the division of the company in 1948.
+                      </p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <div class="accordion-header collpsed" data-toggle="collapse" data-target="#collapse-02">
+                  <h3>The Puma Logo Only Changed Once</h3>
+                </div>
+                <div class="collapse" id="collapse-02" data-parent="#accordion">
+                  <div class="accordion-body">
+                    <a href="#" style="text-decoration: none;">
+                     <p>
+                      Since its establishment in 1948, only one change has been recorded in the Puma logo. Puma's old logo is a puma or mountain lion jumping in the letter D, which is the initials of the family, namely Dassler. 
+                    </p>
+                    <p>
+                      In 1968 the logo was changed to be more modern. Finally the logo of a puma is jumping towards the name PUMA which is written in bold letters as the official logo until now.
+                    </p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <div class="accordion-header collpsed" data-toggle="collapse" data-target="#collapse-03">
+                  <h3>Puma Records First Shoe With Sophisticated Technology</h3>
+                </div>
+                <div class="collapse" id="collapse-03" data-parent="#accordion">
+                  <div class="accordion-body">
+                    <a href="#" style="text-decoration: none;">
+                     <p>
+                      In 1960, PUMA made its name as the first shoe company to use advanced technology with retreading production techniques. The product with this latest innovation was demonstrated in support of athletes in the Tokyo Olympics in 1984.
+                    </p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <div class="accordion-header collpsed" data-toggle="collapse" data-target="#collapse-04">
+                  <h3>At the 2006 World Cup, Puma succeeded in overthrowing the hegemony of Adidas and Nike</h3>
+                </div>
+                <div class="collapse" id="collapse-04" data-parent="#accordion">
+                  <div class="accordion-body">
+                    <a href="#" style="text-decoration: none;">
+                     <p>
+                      At the 2006 World Cup, Adidas and Nike both 'lost'. Nike did not send representatives to the final, while Adidas carried by France competed in the top party against Italy (Puma).
+                    </p>
+                    <p>
+                      Through a penalty shootout then Gli Azzurri won the title. This is the first time that a team outside of Nike and Adidas has won the World Cup in modern football.
+                    </p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Faq Section End -->
+
+    <!-- Contact Section Start -->
+    <section class="contact section-padding">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-title">
+              <h2>customer <span>service</span></h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-5">
+            <div class="contact-info">
+              <div class="contact-info-item">
+                <i class="fas fa-location-arrow"></i>
+                <h4>Company Location</h4>
+                <p>Minnesota</p>
+              </div>
+              <div class="contact-info-item">
+                <i class="fas fa-envelope"></i>
+                <h4>Write To Us At</h4>
+                <p>auliamartha243@gmal.com</p>
+              </div>
+              <div class="contact-info-item">
+                <i class="fas fa-phone"></i>
+                <h4>Call Us On</h4>
+                <p>+62 888 8534 674</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-7">
+            <div class="contact-form">
+              <form>
+
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <input type="text" placeholder="Your Name" class="form-control">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="form-group">
+                      <input type="text" placeholder="Your Email" class="form-control">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="form-group">
+                      <input type="text" placeholder="Your Phone" class="form-control">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="form-group">
+                      <input type="text" placeholder="Subject" class="form-control">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="form-group">
+                      <textarea placeholder="Your Message" class="form-control">
+                        </textarea>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12">
+                    <button type="submit" class="btn btn-2">Send Message</button>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+    <!-- Contact Section End -->
+
+    <!-- Footer Start -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-col">
+              <h3>About Us</h3>
+              <p>Secoutfits adalah sebuah website e-commerce Asia Tenggara yang didirikan oleh Aulia Martha Brielliant pada 2022.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-col">
+              <h3>Company</h3>
+              <ul>
+                <li><a href="#">privacy policy</a></li>
+                <li><a href="#">terms & condition</a></li>
+                <li><a href="#">lates blogs</a></li>
+                <li><a href="#">app services</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-col">
+              <h3>Quick Links</h3>
+              <ul>
+                <li><a href="#home">Search</a></li>
+                <li><a href="#features">More Information</a></li>
+                <li><a href="#screenshots">Attachment</a></li>
+                <li><a href="#testimonials">Reader Reviews</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-col">
+              <h3>Social Pages</h3>
+              <ul>
+                <li><a href="https://www.facebook.com/auliarthaaaa/">facebook</a></li>
+                <li><a href="https://www.instagram.com/auliarthaaa/">instagram</a></li>
+                <li><a href="https://github.com/aulia2424">Github</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <p class="copyright-text"><a href="../puma/puma.html">Secoutfits</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Toggle Theme Start -->
+    <div class="toggle-theme">
+      <i class="fas"></i>
+    </div>
+    <!-- Toggle Theme End light and dark mode-->
+
+   <!-- Modal Start -->
+   <div class="trailer">
+    <div class="bayar">
+      <div class="container">
+        <div class="content-bayar">
+          <h2>Pembayaran</h2>
+          <h4>Metode Pembayaran</h4>
+          <p><input type="checkbox" name="1"> Bayar Ditempat</p>
+          <p><input type="checkbox" name="2"> Payletter</p>
+          <p><input type="checkbox" name="3"> Transfer</p>
+          <p><input type="checkbox" name="4"> Dana</p>
+          <br>
+          <h4>Pilih Daerah</h4>
+          <p><input type="checkbox" name="1"> Jawa Barat</p>
+          <p><input type="checkbox" name="2"> Jawa Tengah</p>
+          <p><input type="checkbox" name="3"> Sulawesi</p>
+          <p><input type="checkbox" name="4"> Sumatra</p>
+          <p><input type="checkbox" name="5"> Papua</p>
+        </div><br>
+        <a href="#" class="play" onclick="toggle();" style="background-color: #fff; color: #4267fa; margin-bottom: 20px;">Bayar</a>
+      </div>
+    </div>
+    <img src="img/close.png" class="close" onclick="toggle();" />
+  </div>
+
+  <script type="text/javascript">
+    function toggle() {
+      var trailer = document.querySelector(".trailer");
+      var bayar = document.querySelector(".bayar");
+      trailer.classList.toggle("active");
+      bayar.currentTime = 0;
+      bayar.pause();
+    }
+  </script>
+
+    <!-- jquery js -->
+    <script src="js/jquery.min.js"></script>
+    <!-- popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- owl carousel js -->
+    <script src="js/owl.carousel.min.js"></script>
+    <!-- ScrollIt js -->
+    <script src="js/scrollIt.min.js"></script>
+    <!-- main js -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
+
+<!-- pengertian landing page -->
+<!-- Landing page adalah membuat webiste dengan konsep marketing -->
+
+<!-- line height -->
+<!-- Mengatur Tinggi Baris dalam Paragraf dengan line-height.
+Yang dimaksud dengan tinggi baris dalam paragraf adalah besar jarak antara satu baris dengan baris di bawahnya. arahnya berati horizontal -->
+
+<!-- content: ""; pada css -->
+<!-- Content digunakan untuk memasukan atau menyisipkan sebuah karakter lain ke dalam tag HTML dibagian awal tag (:before) dan bagian akhir tag (:after). Contoh, disini saya akan memasukan sebuah teks lain kedalam suatu tag p (paragraf). -->
+
+<!-- ::before & ::after pada css -->
+<!-- :before digunakan untuk menambahkan elemen sebelum elemen utama, sedangkan :after digunakan untuk menambahkan elemen sesudah elemen utama. -->
+
+<!-- col-lg-8 -->
+<!-- mereka tunjukkan adalah bahwa mereka akan merentang 8 dan 4 kolom -->
+
+<!-- calc() pada css -->
+<!-- fungsi calc() khusus untuk melakukan perhitungan matematika -->
+
+<!-- carousel -->
+<!-- Carousel / slide show merupakan proses penampilan gambar-gambar yang di beri efek slide. yang saya pakai carousel dari bootstrap -->
+
+<!-- :first-child & :last-child -->
+<!-- :first-child digunakan untuk menseleksi element children yang berada pada urutan pertama. -->
+<!-- :last-child digunakan untuk menseleksi element children yang berada pada urutan terakhir. -->
+
+<!-- :not(:last-child) -->
+<!-- untuk  memilih semua CSS kecuali elemen terakhir -->
+
+<!-- placeholder -->
+<!-- untuk ngasi nama di tempat yang buat ngisi email jadi kalo mau ganti tinggal ganti di situ-->
+
+<!-- biar nge scroll ke bawah kaya pake section kita bisa pake scrollIt di js -->
+
+<!-- transform-origin -->
+<!-- Properti mengubah-asal memungkinkan Anda untuk mengubah posisi elemen berubah.
+transformasi 2D dapat mengubah x dan y-sumbu elemen. transformasi 3D juga dapat mengubah z-sumbu elemen. -->
+
+<!-- function updateIcon() {
+    if ($("body").hasClass("dark")) {
+      $(".toggle-theme i").removeClass("fa-moon");
+      $(".toggle-theme i").addClass("fa-sun");
+    } else {
+      $(".toggle-theme i").removeClass("fa-sun");
+      $(".toggle-theme i").addClass("fa-moon");
+    }
+  }
+}); -->
+<!-- jadi jika cody yang klas nya dark di pencet maka akan tampilannnya gelap dan fa-moonnya/ logonya akan berubah menjadi fa-sun, begitupun sebaliknya -->
